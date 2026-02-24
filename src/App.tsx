@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import IndexHome from "./pages/home/IndexHome";
 import Footer from "./components/Footer";
 import Login from "./pages/auth/Login";
+import NotFound from "./pages/404/NotFound";
 
 // --- Layout Wrapper to handle conditional rendering ---
 const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<IndexHome />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </LayoutWrapper>
     </Router>
