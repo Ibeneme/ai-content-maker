@@ -17,13 +17,13 @@ import k from "../../assets/images/k.png";
 //import n from "../../assets/images/n.png";
 // Added missing imports
 import o from "../../assets/images/o.png";
-import p from "../../assets/images/a.png";
+import p from "../../assets/images/o.png";
 import q from "../../assets/images/q.png";
-import r from "../../assets/images/r.png";
+// import r from "../../assets/images/o.png";
 
 const Gallery = () => {
   const userGenerations = [
-    { id: 17, type: "Prism Flow", url: r, span: "md:col-span-2" },
+    //{ id: 17, type: "Prism Flow", url: r, span: "md:col-span-2" },
 
     { id: 1, type: "Studio Twin", url: a, span: "md:col-span-2 md:row-span-2" },
     { id: 2, type: "Portrait Lock", url: b, span: "col-span-1" },
@@ -45,7 +45,7 @@ const Gallery = () => {
   ];
 
   // Updated variants to include more diversity from your new images
-  const variants = [o, p, q, r];
+  const variants = [o, p, q];
 
   return (
     <div className="bg-black min-h-screen pt-32 pb-20">
