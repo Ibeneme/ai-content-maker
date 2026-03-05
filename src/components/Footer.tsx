@@ -71,7 +71,7 @@ const Footer = () => {
                 <Shield size={18} className="text-black" />
               </div>
               <span className="text-2xl font-black tracking-tighter text-white uppercase">
-                AI-MAKER
+                YOUR AI-MAKER
               </span>
             </div>
             <p className="text-zinc-500 text-sm max-w-xs leading-relaxed font-medium">

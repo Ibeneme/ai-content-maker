@@ -1,19 +1,25 @@
 import { motion } from "framer-motion";
 import { Scan, Layers, Eye, ShieldCheck, Camera, Sparkles } from "lucide-react";
 
+// Local Asset Imports
+import g from "../../assets/images/g.png";
+import h from "../../assets/images/h.png";
+import j from "../../assets/images/j.png";
+import k from "../../assets/images/k.png";
+import l from "../../assets/images/l.png";
+import m from "../../assets/images/m.png";
+import n from "../../assets/images/n.png";
+
 const Features = () => {
   const images = {
-    locked:
-      "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=800",
-    render:
-      "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800",
-    depth:
-      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800",
+    locked: g, 
+    render: h, 
+    depth: j,  
   };
 
   return (
-    <div className="bg-black text-white w-full overflow-hidden">
-      {/* SECTION 1: THE CORE SPECS (Bento Grid) */}
+    <div className="bg-black text-white w-full overflow-hidden min-h-[100dvh]">
+      {/* SECTION 1: BENTO GRID */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -21,129 +27,113 @@ const Features = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          <div className="md:col-span-2 p-8 rounded-3xl bg-zinc-900/40 border border-white/5 relative overflow-hidden group">
-            <div className="relative z-10">
+          <div className="md:col-span-2 p-8 rounded-3xl bg-zinc-900/40 border border-white/5 relative overflow-hidden group min-h-[350px]">
+            <div className="relative z-20">
               <Camera className="text-[#ec4899] mb-4" size={32} />
-              <h3 className="text-3xl font-black mb-2 uppercase tracking-tighter">
-                Generate ultra-realistic scenes
+              <h3 className="text-4xl font-black mb-2 uppercase tracking-tighter leading-none">
+                Ultra-Realistic <br /> Scene Generation
               </h3>
-              <p className="text-zinc-500 max-w-md text-lg">
-                Our generator captures the raw essence of your source photo.
-                It’s not just an AI face; it's your exact geometry locked into
-                high-fidelity pixels for professional-grade content.
+              <p className="text-zinc-500 max-w-md text-lg mt-4">
+                High-fidelity pixels locked to your exact geometry for professional-grade content.
               </p>
             </div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#ec4899]/10 blur-[80px] -z-0 group-hover:bg-[#ec4899]/20 transition-all" />
+            {/* Background Image: COVER */}
+            <img 
+              src={k} 
+              className="absolute inset-0 w-full h-full opacity-20 grayscale group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000 object-cover" 
+              alt=""
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10" />
           </div>
 
-          <div className="p-8 rounded-3xl bg-[#d8b4fe]/10 border border-[#d8b4fe]/20 flex flex-col justify-between group">
-            <Sparkles
-              className="text-[#d8b4fe] group-hover:rotate-12 transition-transform"
-              size={32}
-            />
-            <div>
-              <h3 className="text-xl font-black uppercase tracking-tighter">
-              Your Photo. Reimagined — Not Replaced.
-              </h3>
-              <p className="text-zinc-400 text-sm mt-2">
-                Instantly place yourself into cinematic, editorial, or surreal
-                environments without losing a single facial detail.
-              </p>
+          <div className="p-8 rounded-3xl bg-[#d8b4fe]/10 border border-[#d8b4fe]/20 flex flex-col justify-between group relative overflow-hidden min-h-[350px]">
+            <Sparkles className="text-[#d8b4fe] group-hover:rotate-12 transition-transform relative z-20" size={32} />
+            <div className="relative z-20">
+              <h3 className="text-2xl font-black uppercase tracking-tighter">Your Photo. <br /> Reimagined.</h3>
+              <p className="text-zinc-400 text-sm mt-2">Cinematic environments without losing a single facial detail.</p>
             </div>
+            {/* Background Image: COVER */}
+            <img 
+              src={l} 
+              className="absolute inset-0 w-full h-full opacity-10 grayscale group-hover:opacity-30 transition-all duration-1000 object-cover" 
+              alt=""
+            />
           </div>
         </motion.div>
       </section>
 
-      {/* SECTION 2: THE "PHOTO LOCK" SCANNER (Interactive Visual) */}
-      <section className="relative py-24 bg-zinc-900/20 border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="space-y-8"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ec4899]/10 border border-[#ec4899]/20 text-[#ec4899] text-[10px] font-black tracking-widest uppercase">
-              <Scan size={14} /> Neural Content Mapping v2.4
-            </div>
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
-            Upload Once.  <br />{" "}
-              <span className="text-[#d8b4fe]">Create Anything.</span>
-            </h2>
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              Every generation is cross-referenced against your primary facial
-              anchor. Whether you change the outfit, the lighting, or the
-              location, our engine ensures the portrait stays **consistently
-              you** in every shot.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              {["Likeness Lock", "Geometric Precision", "Skin Fidelity"].map(
-                (tag) => (
-                  <div
-                    key={tag}
-                    className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[10px] font-bold text-[#d8b4fe] uppercase tracking-tighter"
-                  >
-                    {tag}: 100%
-                  </div>
-                )
-              )}
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="relative rounded-3xl overflow-hidden aspect-square md:aspect-video border border-white/10 shadow-[0_0_50px_rgba(236,72,153,0.1)]"
-            whileHover={{ scale: 1.02 }}
-          >
-            <img
-              src={images.locked}
-              className="w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-700"
-              alt="Generator preview"
-            />
+      {/* SECTION 2: FULL-WIDTH SCANNER (IMAGE COVER) */}
+      <section className="relative py-12 md:py-24 bg-zinc-900/10 border-y border-white/5 w-full">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col gap-12">
             <motion.div
-              animate={{ top: ["0%", "100%", "0%"] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="absolute left-0 right-0 h-[2px] bg-[#ec4899] shadow-[0_0_20px_#ec4899] z-20"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-          </motion.div>
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="text-center md:text-left space-y-4"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ec4899]/10 border border-[#ec4899]/20 text-[#ec4899] text-[10px] font-black tracking-widest uppercase">
+                <Scan size={14} /> Identity Verification System
+              </div>
+              <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">
+                Upload Once. <span className="text-[#d8b4fe]">Create Always.</span>
+              </h2>
+            </motion.div>
+
+            {/* THE DIV: FULL WIDTH + COVER */}
+            <motion.div
+              className="relative w-full aspect-video rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 bg-zinc-900 shadow-[0_0_100px_rgba(236,72,153,0.1)]"
+              whileHover={{ borderColor: "rgba(236,72,153,0.3)" }}
+            >
+              {/* Image FITS the div as a COVER */}
+              <img
+                src={images.locked}
+                className="w-full h-full object-cover opacity-80 transition-all duration-1000 group-hover:scale-105"
+                alt="Studio Hero Asset"
+              />
+
+              {/* Laser Scan Line Overlay */}
+              <motion.div
+                animate={{ top: ["0%", "100%", "0%"] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                className="absolute left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#ec4899] to-transparent shadow-[0_0_40px_#ec4899] z-20"
+              />
+
+              {/* Viewfinder UI */}
+              <div className="absolute inset-0 border-[20px] border-black/20 pointer-events-none" />
+              <div className="absolute top-10 left-10 w-12 h-12 border-t-4 border-l-4 border-white/40" />
+              <div className="absolute top-10 right-10 w-12 h-12 border-t-4 border-r-4 border-white/40" />
+              <div className="absolute bottom-10 left-10 w-12 h-12 border-b-4 border-l-4 border-white/40" />
+              <div className="absolute bottom-10 right-10 w-12 h-12 border-b-4 border-r-4 border-white/40" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* SECTION 3: THE SPEC LIST (Content Creator Capabilities) */}
+      {/* SECTION 3: SPEC CARDS WITH COVER BACKGROUNDS */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            {
-              icon: <Layers />,
-              title: "Realistic Scenes",
-              desc: "Generate an entire content series across 100+ locations using just one high-res anchor photo.",
-            },
-            {
-              icon: <Eye />,
-              title: "Cinematic Fidelity",
-              desc: "Maintain realistic skin textures, iris light-bounce, and depth-of-field in every automated render.",
-            },
-            {
-              icon: <ShieldCheck />,
-              title: "Zero Identity Loss",
-              desc: "Your unique facial DNA is synthesized locally—your identity is for your content only.",
-            },
+            { icon: <Layers />, title: "Pro Scenes", desc: "100+ locations using one high-res anchor photo.", img: m },
+            { icon: <Eye />, title: "Visual Fidelity", desc: "Realistic skin textures and iris light-bounce.", img: n },
+            { icon: <ShieldCheck />, title: "Secure DNA", desc: "Local synthesis ensures private identity.", img: h },
           ].map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
-              className="group p-6 hover:bg-white/5 rounded-2xl transition-all border border-transparent hover:border-white/5"
+              className="group p-8 bg-zinc-900/40 hover:bg-zinc-900/60 rounded-3xl transition-all border border-white/5 relative overflow-hidden min-h-[250px]"
             >
-              <div className="w-12 h-12 rounded-xl bg-zinc-900 flex items-center justify-center text-[#d8b4fe] mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(216,180,254,0.1)]">
-                {item.icon}
+              <div className="relative z-20">
+                <div className="text-[#d8b4fe] mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h4 className="text-2xl font-black uppercase mb-2 tracking-tight">{item.title}</h4>
+                <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
-              <h4 className="text-xl font-black uppercase mb-2 leading-tight tracking-tight">
-                {item.title}
-              </h4>
-              <p className="text-zinc-500 text-sm leading-relaxed">
-                {item.desc}
-              </p>
+              {/* Subtle background: COVER */}
+              <img 
+                src={item.img} 
+                className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-10 transition-all duration-700 object-cover grayscale" 
+                alt="" 
+              />
             </motion.div>
           ))}
         </div>
