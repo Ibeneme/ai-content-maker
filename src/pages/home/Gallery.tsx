@@ -19,6 +19,8 @@ import n from "../../assets/images/n.png";
 //import o from "../../assets/images/o.png";
 import p from "../../assets/images/o.png";
 import q from "../../assets/images/q.png";
+import y from "../../assets/images/y.png";
+import z from "../../assets/images/z.png";
 // import r from "../../assets/images/o.png";
 
 const Gallery = () => {
@@ -26,18 +28,21 @@ const Gallery = () => {
     //{ id: 17, type: "Prism Flow", url: r, span: "md:col-span-2" },
 
     { id: 1, type: "Studio Twin", url: a, span: "md:col-span-2 md:row-span-2" },
-   // { id: 2, type: "Portrait Lock", url: b, span: "col-span-1" },
+    // { id: 2, type: "Portrait Lock", url: b, span: "col-span-1" },
     { id: 3, type: "Neural Render", url: c, span: "col-span-1" },
-   // { id: 4, type: "Consistency Engine", url: d, span: "md:col-span-1" },
+    // { id: 4, type: "Consistency Engine", url: d, span: "md:col-span-1" },
     //{ id: 5, type: "Idea Synthesis", url: e, span: "md:col-span-1" },
     // { id: 6, type: "Kinetic Motion", url: f, span: "md:col-span-2" },
     { id: 7, type: "Pro Shoot", url: g, span: "col-span-1" },
     // { id: 8, type: "Identity Lock", url: h, span: "col-span-1" },
     // { id: 9, type: "Fashion Editorial", url: j, span: "md:col-span-2" },
-   // { id: 10, type: "Commercial Concept", url: k, span: "col-span-1" },
+    // { id: 10, type: "Commercial Concept", url: k, span: "col-span-1" },
     // { id: 11, type: "Lighting Study", url: l, span: "col-span-1" },
     // { id: 12, type: "Vogue Protocol", url: m, span: "md:col-span-2" },
     // Added new generation items
+   // { id: 13, type: "Hyper-Real", url: y, span: "col-span-1" },
+   // { id: 14, type: "Aero Dynamic", url: z, span: "col-span-1" },
+
     //{ id: 13, type: "Hyper-Real", url: n, span: "col-span-1" },
     // { id: 14, type: "Aero Dynamic", url: o, span: "col-span-1" },
     { id: 15, type: "Chromatic", url: p, span: "md:col-span-1" },
@@ -45,7 +50,7 @@ const Gallery = () => {
   ];
 
   // Updated variants to include more diversity from your new images
-  const variants = [e, m, l, n];
+  const variants = [e, m, l, n, y, z];
 
   return (
     <div className="bg-black min-h-screen pt-32 pb-20">
