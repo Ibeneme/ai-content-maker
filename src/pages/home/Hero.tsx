@@ -8,8 +8,8 @@ import c from "../../assets/images/c.png";
 import d from "../../assets/images/d.png";
 import e from "../../assets/images/e.png";
 import f from "../../assets/images/f.png";
-import g from "../../assets/images/a.png";
-import h from "../../assets/images/a.png";
+import g from "../../assets/images/g.png";
+import h from "../../assets/images/h.png";
 
 const Hero = () => {
   const generatedScenes = [

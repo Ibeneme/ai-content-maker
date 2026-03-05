@@ -3,20 +3,20 @@ import { Camera, Zap, Maximize2 } from "lucide-react";
 
 // Local Asset Imports
 import a from "../../assets/images/a.png";
-import b from "../../assets/images/b.png";
+//import b from "../../assets/images/b.png";
 import c from "../../assets/images/c.png";
-import d from "../../assets/images/d.png";
-// import e from "../../assets/images/e.png";
+// import d from "../../assets/images/d.png";
+import e from "../../assets/images/e.png";
 // import f from "../../assets/images/f.png";
 import g from "../../assets/images/g.png";
 // import h from "../../assets/images/h.png";
 // import j from "../../assets/images/j.png";
-import k from "../../assets/images/k.png";
-// import l from "../../assets/images/l.png";
-//import m from "../../assets/images/m.png";
-//import n from "../../assets/images/n.png";
+// import k from "../../assets/images/k.png";
+import l from "../../assets/images/l.png";
+import m from "../../assets/images/m.png";
+import n from "../../assets/images/n.png";
 // Added missing imports
-import o from "../../assets/images/o.png";
+//import o from "../../assets/images/o.png";
 import p from "../../assets/images/o.png";
 import q from "../../assets/images/q.png";
 // import r from "../../assets/images/o.png";
@@ -26,15 +26,15 @@ const Gallery = () => {
     //{ id: 17, type: "Prism Flow", url: r, span: "md:col-span-2" },
 
     { id: 1, type: "Studio Twin", url: a, span: "md:col-span-2 md:row-span-2" },
-    { id: 2, type: "Portrait Lock", url: b, span: "col-span-1" },
+   // { id: 2, type: "Portrait Lock", url: b, span: "col-span-1" },
     { id: 3, type: "Neural Render", url: c, span: "col-span-1" },
-    { id: 4, type: "Consistency Engine", url: d, span: "md:col-span-1" },
+   // { id: 4, type: "Consistency Engine", url: d, span: "md:col-span-1" },
     //{ id: 5, type: "Idea Synthesis", url: e, span: "md:col-span-1" },
     // { id: 6, type: "Kinetic Motion", url: f, span: "md:col-span-2" },
     { id: 7, type: "Pro Shoot", url: g, span: "col-span-1" },
     // { id: 8, type: "Identity Lock", url: h, span: "col-span-1" },
     // { id: 9, type: "Fashion Editorial", url: j, span: "md:col-span-2" },
-    { id: 10, type: "Commercial Concept", url: k, span: "col-span-1" },
+   // { id: 10, type: "Commercial Concept", url: k, span: "col-span-1" },
     // { id: 11, type: "Lighting Study", url: l, span: "col-span-1" },
     // { id: 12, type: "Vogue Protocol", url: m, span: "md:col-span-2" },
     // Added new generation items
@@ -45,7 +45,7 @@ const Gallery = () => {
   ];
 
   // Updated variants to include more diversity from your new images
-  const variants = [o, p, q];
+  const variants = [e, m, l, n];
 
   return (
     <div className="bg-black min-h-screen pt-32 pb-20">
@@ -128,7 +128,7 @@ const Gallery = () => {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.02 }}
-                className="aspect-[4/5] rounded-3xl border border-white/10 overflow-hidden bg-black flex items-center justify-center p-2"
+                className="aspect-[3/5] rounded-3xl border border-white/10 overflow-hidden bg-black flex items-center justify-center p-2"
               >
                 <img
                   src={url}
