@@ -90,11 +90,11 @@ const SynthesisWorkflow = () => {
             >
               {/* Image Side */}
               <div className="flex-1 w-full group">
-                <div className="relative rounded-[2rem] overflow-hidden border border-white/10 aspect-video md:aspect-square lg:aspect-video shadow-[0_0_50px_rgba(0,0,0,1)] bg-zinc-900">
+                <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,1)] bg-zinc-900">
                   <img
                     src={phase.img}
                     alt={phase.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                    className="w-full h-full object-cover  group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 </div>

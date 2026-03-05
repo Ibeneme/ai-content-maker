@@ -6,34 +6,46 @@ import a from "../../assets/images/a.png";
 import b from "../../assets/images/b.png";
 import c from "../../assets/images/c.png";
 import d from "../../assets/images/d.png";
-import e from "../../assets/images/e.png";
-import f from "../../assets/images/f.png";
+// import e from "../../assets/images/e.png";
+// import f from "../../assets/images/f.png";
 import g from "../../assets/images/g.png";
-import h from "../../assets/images/h.png";
-import j from "../../assets/images/j.png";
+// import h from "../../assets/images/h.png";
+// import j from "../../assets/images/j.png";
 import k from "../../assets/images/k.png";
-import l from "../../assets/images/l.png";
-import m from "../../assets/images/m.png";
-import n from "../../assets/images/n.png";
+// import l from "../../assets/images/l.png";
+//import m from "../../assets/images/m.png";
+//import n from "../../assets/images/n.png";
+// Added missing imports
+import o from "../../assets/images/o.png";
+import p from "../../assets/images/a.png";
+import q from "../../assets/images/q.png";
+import r from "../../assets/images/r.png";
 
 const Gallery = () => {
   const userGenerations = [
+    { id: 17, type: "Prism Flow", url: r, span: "md:col-span-2" },
+
     { id: 1, type: "Studio Twin", url: a, span: "md:col-span-2 md:row-span-2" },
     { id: 2, type: "Portrait Lock", url: b, span: "col-span-1" },
     { id: 3, type: "Neural Render", url: c, span: "col-span-1" },
     { id: 4, type: "Consistency Engine", url: d, span: "md:col-span-1" },
-    { id: 5, type: "Idea Synthesis", url: e, span: "md:col-span-1" },
-    { id: 6, type: "Kinetic Motion", url: f, span: "md:col-span-2" },
+    //{ id: 5, type: "Idea Synthesis", url: e, span: "md:col-span-1" },
+    // { id: 6, type: "Kinetic Motion", url: f, span: "md:col-span-2" },
     { id: 7, type: "Pro Shoot", url: g, span: "col-span-1" },
-    { id: 8, type: "Identity Lock", url: h, span: "col-span-1" },
-    { id: 9, type: "Fashion Editorial", url: j, span: "md:col-span-2" },
+    // { id: 8, type: "Identity Lock", url: h, span: "col-span-1" },
+    // { id: 9, type: "Fashion Editorial", url: j, span: "md:col-span-2" },
     { id: 10, type: "Commercial Concept", url: k, span: "col-span-1" },
-    { id: 11, type: "Lighting Study", url: l, span: "col-span-1" },
-    { id: 12, type: "Vogue Protocol", url: m, span: "md:col-span-2" },
+    // { id: 11, type: "Lighting Study", url: l, span: "col-span-1" },
+    // { id: 12, type: "Vogue Protocol", url: m, span: "md:col-span-2" },
+    // Added new generation items
+    //{ id: 13, type: "Hyper-Real", url: n, span: "col-span-1" },
+    // { id: 14, type: "Aero Dynamic", url: o, span: "col-span-1" },
+    { id: 15, type: "Chromatic", url: p, span: "md:col-span-1" },
+    { id: 16, type: "Deep Space", url: q, span: "md:col-span-1" },
   ];
 
-  // Using the final set for the stability showcase
-  const variants = [g, h, k, n];
+  // Updated variants to include more diversity from your new images
+  const variants = [o, p, q, r];
 
   return (
     <div className="bg-black min-h-screen pt-32 pb-20">
@@ -57,7 +69,7 @@ const Gallery = () => {
 
       {/* SECTION 2: EXPANDED MASONRY GRID */}
       <section className="max-w-[1600px] mx-auto px-6 mb-40">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[350px]">
           {userGenerations.map((img, i) => (
             <motion.div
               key={i}
@@ -93,7 +105,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* SECTION 3: CONSISTENCY PROOF (NO CUTTING) */}
+      {/* SECTION 3: CONSISTENCY PROOF */}
       <section className="max-w-7xl mx-auto px-6 py-24 rounded-[4rem] bg-zinc-900/20 border border-white/5 relative overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
           <div className="space-y-8">
