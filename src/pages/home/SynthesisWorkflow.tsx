@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import { UserCheck, Fingerprint, Layers, Camera, Globe } from "lucide-react";
 
 // Local Asset Imports
-import b from "../../assets/images/b.png";
+//import b from "../../assets/images/b.png";
 import c from "../../assets/images/t.png";
 import d from "../../assets/images/d.png";
 import e from "../../assets/images/s.png";
 import f from "../../assets/images/w.png";
+import b from "../../assets/images/new_c.jpg";
 // (Note: g and h are available if you want to swap any below)
 
 const SynthesisWorkflow = () => {

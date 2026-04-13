@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Candlelight Foundation | Impact | Gemini Enhanced</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    position: fixed; 
+top: 0;
+left: 0;
+    <style>
+      :root {
+        --primary-indigo: #5d3fd3; /* Purplish Blue */
+        --candle-charcoal: #1a1a1a;
+        --clay-grey: #999999;
+        --bg-pure-white: #ffffff;
+        --subtle-frost: #f8f9fc;
+        --indigo-wash: #f1eeff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Rethink Sans", sans-serif;
+        background-color: var(--bg-pure-white);
+        color: var(--candle-charcoal);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+      }
+
+      /* --- UI COMPONENTS --- */
+      .btn-indigo {
+        display: inline-block;
+        background: var(--primary-indigo);
+        color: white;
+        padding: 18px 45px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(93, 63, 211, 0.2);
+        font-size: 16px;
+      }
+
+      .btn-indigo:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(93, 63, 211, 0.35);
+      }
+
+      .premium-tag {
+        color: var(--primary-indigo);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      /* --- HERO SECTION --- */
+      .hero-split {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 120px max(20px, 4vw);
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 60px;
+      }
+
+      .hero-content {
+        flex: 1;
+        max-width: 650px;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        max-width: 550px;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(38px, 6vw, 68px);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        letter-spacing: -2px;
+      }
+
+      .hero-content p {
+        font-size: 20px;
+        color: #555;
+        margin-bottom: 45px;
+        font-weight: 400;
+      }
+
+      /* Generated Image Styling */
+      .gen-image-frost {
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+      }
+
+      /* --- IMPACT SCROLLER --- */
+      .legacy-scroller {
+        padding: 60px 0;
+        background: var(--subtle-frost);
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .ticker-wrap-indigo {
+        display: flex;
+        width: fit-content;
+        animation: infiniteScroll 45s linear infinite;
+      }
+
+      .ticker-item-lg {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0 60px;
+        white-space: nowrap;
+      }
+
+      .ticker-year-lg {
+        font-weight: 400;
+        color: var(--clay-grey);
+        font-size: 16px;
+      }
+
+      .ticker-val-lg {
+        font-weight: 800;
+        font-size: 36px;
+        color: var(--candle-charcoal);
+      }
+
+      .total-glow {
+        background: var(--primary-indigo);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 14px;
+        font-weight: 800;
+        font-size: 32px;
+        box-shadow: 0 5px 15px rgba(93, 63, 211, 0.2);
+      }
+
+      @keyframes infiniteScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* --- OUTREACH PROGRAMS --- */
+      .section-padding-p {
+        padding: 100px max(20px, 4vw);
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-header-cntr {
+        text-align: center;
+        margin-bottom: 80px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .section-header-cntr h2 {
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 800;
+        margin-bottom: 18px;
+        letter-spacing: -1px;
+      }
+
+      .grid-outreach {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+      }
+
+      .program-card-p {
+        background: white;
+        padding: 40px;
+        border-radius: 28px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .program-card-p:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 30px 60px rgba(93, 63, 211, 0.12);
+        border-color: rgba(93, 63, 211, 0.1);
+      }
+
+      .card-image-wrap {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-bottom: 25px;
+      }
+
+      .card-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .program-card-p h3 {
+        font-size: 26px;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+
+      .program-card-p p {
+        color: #555;
+        margin-bottom: 30px;
+        font-weight: 400;
+        flex-grow: 1;
+      }
+
+      .card-action-link {
+        font-weight: 700;
+        color: var(--primary-indigo);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+      }
+
+      /* --- STATS IN BLACK --- */
+      .impact-banner-blk {
+        background: var(--candle-charcoal);
+        color: white;
+        padding: 120px max(20px, 5vw);
+        text-align: center;
+        border-radius: 40px;
+        margin: 40px 20px;
+      }
+
+      .impact-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 50px;
+        margin-top: 80px;
+      }
+
+      .impact-item-lg h3 {
+        font-size: 64px;
+        color: var(--primary-indigo);
+        margin-bottom: 12px;
+        font-weight: 800;
+      }
+
+      .impact-item-lg p {
+        opacity: 0.8;
+        max-width: 300px;
+        margin: 0 auto;
+        font-weight: 400;
+      }
+
+      /* --- NEWSLETTER --- */
+      .newsletter-frost {
+        padding: 100px max(20px, 4vw);
+        text-align: center;
+        background: var(--subtle-frost);
+        border-radius: 40px;
+        margin: 0 20px 100px 20px;
+      }
+
+      .newsletter-frost h2 {
+        font-size: 40px;
+        margin-bottom: 25px;
+        font-weight: 800;
+      }
+      .newsletter-frost p {
+        max-width: 650px;
+        margin: 0 auto 50px;
+        color: #555;
+      }
+
+      .newsletter-flex {
+        display: flex;
+        max-width: 550px;
+        margin: 0 auto;
+        gap: 15px;
+      }
+
+      .newsletter-flex input {
+        flex-grow: 1;
+        padding: 20px 30px;
+        border-radius: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        outline: none;
+        font-family: inherit;
+        font-size: 16px;
+      }
+
+      .newsletter-flex button {
+        background: var(--candle-charcoal);
+        color: white;
+        border: none;
+        padding: 0 40px;
+        border-radius: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .newsletter-flex button:hover {
+        background: var(--primary-indigo);
+      }
+
+      /* --- RESPONSIVE ADJUSTMENTS --- */
+      @media (max-width: 900px) {
+        .hero-split {
+          flex-direction: column;
+          text-align: center;
+          padding: 80px 20px;
+        }
+        .hero-content {
+          margin-bottom: 40px;
+        }
+        .hero-content p {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .newsletter-flex {
+          flex-direction: column;
+        }
+        .section-padding-p {
+          padding: 80px 20px;
+        }
+        .impact-banner-blk {
+          padding: 80px 20px;
+          margin: 40px 0;
+          border-radius: 0;
+        }
+        .ticker-val-lg {
+          font-size: 28px;
+        }
+        .total-glow {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero-split">
+      <div class="hero-content">
+        <h1>
+          A Hot Meal for Every Stomach,<br />A Chance to Change Every
+          Circumstance
+        </h1>
+        <p>
+          We are a sanctuary for transformation in Lagos. By bridging the gap
+          between hunger and opportunity, we empower the most vulnerable through
+          consistent nourishment, quality education, and high-demand vocational
+          training.
+        </p>
+        <a href="#volunteer" class="btn-indigo">Become a Volunteer Now</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="gemini_generated_hero_candlelight.webp"
+          alt="A sophisticated and compassionate visualization of candlelight illuminating the path of opportunity in a vibrant Lagos community."
+          class="gen-image-frost"
+        />
+      </div>
+    </header>
+
+    <section class="legacy-scroller">
+      <div class="ticker-wrap-indigo">
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2017</span>
+          <span class="ticker-val-lg">11,796</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2018</span>
+          <span class="ticker-val-lg">19,829</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2019</span>
+          <span class="ticker-val-lg">15,819</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2020</span>
+          <span class="ticker-val-lg">7,295</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2021</span>
+          <span class="ticker-val-lg">27,237</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2022</span>
+          <span class="ticker-val-lg">27,630</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2023</span>
+          <span class="ticker-val-lg">28,457</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2024</span>
+          <span class="ticker-val-lg">34,403</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2025</span>
+          <span class="ticker-val-lg">28,698</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="total-glow">TOTAL MEALS: 201,164</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2017</span>
+          <span class="ticker-val-lg">11,796</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2018</span>
+          <span class="ticker-val-lg">19,829</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2019</span>
+          <span class="ticker-val-lg">15,819</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2020</span>
+          <span class="ticker-val-lg">7,295</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2021</span>
+          <span class="ticker-val-lg">27,237</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2022</span>
+          <span class="ticker-val-lg">27,630</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2023</span>
+          <span class="ticker-val-lg">28,457</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2024</span>
+          <span class="ticker-val-lg">34,403</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="ticker-year-lg">2025</span>
+          <span class="ticker-val-lg">28,698</span>
+        </div>
+        <div class="ticker-item-lg">
+          <span class="total-glow">TOTAL MEALS: 201,164</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-p">
+      <div class="section-header-cntr">
+        <h2>Explore Our Outreach Programs</h2>
+        <p>
+          Our programs are designed to provide a cohesive, structured pathway
+          out of poverty, focusing on both immediate relief and long-term
+          economic independence.
+        </p>
+      </div>
+      <div class="grid-outreach">
+        <div class="program-card-p">
+          <div class="card-image-wrap">
+            <img
+              src="gemini_generated_food_relief.webp"
+              alt="A warm, respectful scene of community members in Lagos receiving nutritious meals, emphasizing human connection and dignity."
+            />
+          </div>
+          <span class="premium-tag">Immediate Nutrition</span>
+          <h3>Mae’s Soup Kitchen</h3>
+          <p>
+            Catering specifically to the "working poor"—artisans, street
+            sweeepers, and hawkers whose wages are insufficient. Over 200,000
+            dignified meals served.
+          </p>
+          <a href="#" class="card-action-link">Get Involved Now →</a>
+        </div>
+
+        <div class="program-card-p">
+          <div class="card-image-wrap">
+            <img
+              src="gemini_generated_street_kids_school.webp"
+              alt="A powerful image of joyful children, formerly at-risk, attending a classroom in Lagos with new uniforms and books."
+            />
+          </div>
+          <span class="premium-tag">Education & Shelter</span>
+          <h3>Street Kids to School</h3>
+          <p>
+            A scholarship and shelter program providing safe sanctuary for
+            at-risk teens, returning both boys and girls to primary and
+            secondary education.
+          </p>
+          <a href="#" class="card-action-link">Donate Education →</a>
+        </div>
+
+        <div class="program-card-p">
+          <div class="card-image-wrap">
+            <img
+              src="gemini_generated_vocational_skills.webp"
+              alt="A professional close-up of a trainee in Lagos focused on a complex trade, like intricate carpentry or media technology, demonstrating masterful skill and focus."
+            />
+          </div>
+          <span class="premium-tag">Future Economic Power</span>
+          <h3>Vocational School</h3>
+          <p>
+            High-demand certified training in trades like Electricals, Media
+            Production, and Carpentry, combined with entrepreneurship literacy
+            for sustainable independence.
+          </p>
+          <a href="#" class="card-action-link">Enroll a Student →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-banner-blk">
+      <div style="max-width: 900px; margin: 0 auto">
+        <h2 style="font-size: 38px; font-weight: 800; margin-bottom: 20px">
+          Impact Highlights & Key Figures
+        </h2>
+        <p style="opacity: 0.8; font-weight: 400">
+          Beyond the numbers, these key figures represent hundreds of lives
+          transformed, hunger defeated, and dreams restored across Lagos.
+        </p>
+      </div>
+      <div class="impact-grid-3">
+        <div class="impact-item-lg">
+          <h3>200k+</h3>
+          <p>Nourishing hot meals provided since 2017.</p>
+        </div>
+        <div class="impact-item-lg">
+          <h3>200+</h3>
+          <p>Scholarships enabling access to quality education.</p>
+        </div>
+        <div class="impact-item-lg">
+          <h3>300+</h3>
+          <p>Vocational programs driving sustainable change.</p>
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+</html>

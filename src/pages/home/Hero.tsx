@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Zap, Mail, Cpu } from "lucide-react";
 
 // --- LOCAL ASSET IMPORTS ---
-import a from "../../assets/images/a.png";
-import b from "../../assets/images/b.png";
-import c from "../../assets/images/c.png";
+import a from "../../assets/images/new_a.jpg";
+import b from "../../assets/images/new_b.jpg"
+import c from "../../assets/images/new_c.jpg";
 import d from "../../assets/images/d.png";
 import e from "../../assets/images/e.png";
 import f from "../../assets/images/f.png";

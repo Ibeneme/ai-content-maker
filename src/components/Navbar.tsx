@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield,
@@ -8,16 +8,32 @@ import {
   Zap,
   Menu,
   X,
+  LogOut,
+  LayoutDashboard,
 } from "lucide-react";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState, AppDispatch } from "../redux/store";
+import { logout } from "../redux/slices/authSlice"; // Adjust path as needed
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+
+  // Extract auth state
+  const { token } = useSelector((state: RootState) => state.auth);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Helper function for smooth scrolling
+  const handleLogout = () => {
+    console.log("🚀 [Navbar] Logging out...");
+    dispatch(logout());
+    setIsOpen(false);
+    navigate("/");
+  };
+
   const scrollToSection = (id: string) => {
-    setIsOpen(false); // Close mobile menu
+    setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -34,15 +50,12 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] p-4 md:p-6">
       <nav className="max-w-7xl mx-auto flex justify-between items-center bg-black/40 backdrop-blur-2xl border border-white/10 rounded-2xl px-4 md:px-8 py-3 md:py-4 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-        {/* LOGO - Scrolls to top */}
+        {/* LOGO */}
         <div onClick={() => scrollToSection("hero")} className="cursor-pointer">
           <motion.div className="relative flex items-center gap-2 md:gap-3 group">
             <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-tr from-[#d8b4fe] to-[#ec4899] rounded-lg flex items-center justify-center">
               <Shield size={16} className="text-black" />
             </div>
-            {/* <span className="text-lg md:text-2xl font-black text-white uppercase tracking-tighter">
-              AI<span className="text-[#ec4899]">-</span>MAKER
-            </span> */}
           </motion.div>
         </div>
 
@@ -61,15 +74,34 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* ACTIONS */}
+        {/* ACTIONS: Toggle between Login and Dashboard/Logout */}
         <div className="flex items-center gap-2 md:gap-4">
-          <Link to="/login" className="hidden sm:block">
-            <button className="relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 flex items-center gap-2 hover:border-[#d8b4fe]/50 transition-all">
-              <span className="text-[10px] md:text-xs font-black uppercase text-white">
-                Login
-              </span>
-            </button>
-          </Link>
+          {!token ? (
+            <Link to="/login" className="hidden sm:block">
+              <button className="relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2 hover:border-[#ec4899]/50 transition-all">
+                <span className="text-[10px] md:text-xs font-black uppercase text-white tracking-widest">
+                  Login
+                </span>
+              </button>
+            </Link>
+          ) : (
+            <div className="hidden sm:flex items-center gap-3">
+              <Link to="/dashboard">
+                <button className="px-4 py-2 rounded-xl bg-[#ec4899]/10 border border-[#ec4899]/30 text-[#ec4899] flex items-center gap-2 hover:bg-[#ec4899]/20 transition-all">
+                  <LayoutDashboard size={14} />
+                  <span className="text-[10px] font-black uppercase">
+                    Dashboard
+                  </span>
+                </button>
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-400 hover:text-white hover:bg-white/10 transition-all"
+              >
+                <LogOut size={16} />
+              </button>
+            </div>
+          )}
 
           <button onClick={toggleMenu} className="lg:hidden p-2 text-zinc-400">
             {isOpen ? (
@@ -85,10 +117,10 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-24 left-4 right-4 bg-black/95 backdrop-blur-3xl border border-white/10 rounded-3xl overflow-hidden z-50 p-8 flex flex-col gap-6"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            className="lg:hidden absolute top-24 left-4 right-4 bg-black/95 backdrop-blur-3xl border border-white/10 rounded-3xl overflow-hidden z-50 p-8 flex flex-col gap-6 shadow-2xl"
           >
             {navLinks.map((link) => (
               <button
@@ -102,10 +134,35 @@ const Navbar = () => {
                 {link.name}
               </button>
             ))}
+
+            <div className="pt-6 border-t border-white/5 flex flex-col gap-4">
+              {!token ? (
+                <Link to="/login" onClick={() => setIsOpen(false)}>
+                  <button className="w-full py-4 bg-white text-black rounded-2xl font-black uppercase tracking-widest">
+                    Login to Studio
+                  </button>
+                </Link>
+              ) : (
+                <>
+                  <Link to="/dashboard" onClick={() => setIsOpen(false)}>
+                    <button className="w-full py-4 bg-[#ec4899] text-white rounded-2xl font-black uppercase tracking-widest">
+                      Enter Dashboard
+                    </button>
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full py-4 bg-white/5 text-zinc-400 rounded-2xl font-black uppercase tracking-widest border border-white/10"
+                  >
+                    Logout
+                  </button>
+                </>
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
   );
 };
+
 export default Navbar;
