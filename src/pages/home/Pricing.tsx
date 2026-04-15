@@ -11,7 +11,7 @@ const Pricing = () => {
       features: [
         "1 Identity Lock Slot",
         "100 HD & 4K Generations / mo",
-        "8K Cinema Upscaling (5/mo)",
+        "8K Cinema Upscaling",
         "Standard Neural Processing",
         "Free 10 Monthly Generations",
       ],
