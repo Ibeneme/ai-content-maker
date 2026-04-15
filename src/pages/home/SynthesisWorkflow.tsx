@@ -47,7 +47,7 @@ const SynthesisWorkflow = () => {
     {
       step: "05",
       title: "Create Unlimited Content",
-      desc: "Generate multiple consistent scenes in minutes. Perfect for creators, influencers, and brands who need high-quality visuals fast.",
+      desc: "Generate multiple consistent scenes in minutes. Perfect for business owners, creators, and brands who need high-quality commercial visuals fast.",
       icon: <Layers size={32} />,
       color: "#d8b4fe",
       img: f, // Final variations

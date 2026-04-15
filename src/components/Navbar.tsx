@@ -13,20 +13,24 @@ import {
 } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState, AppDispatch } from "../redux/store";
-import { logout } from "../redux/slices/authSlice"; // Adjust path as needed
+import { logout } from "../redux/slices/authSlice";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
 
-  // Extract auth state
   const { token } = useSelector((state: RootState) => state.auth);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // Function to handle external login redirect
+  const handleLoginRedirect = () => {
+    window.open("https://your-ai-content-studio.vercel.app", "_blank");
+    setIsOpen(false);
+  };
+
   const handleLogout = () => {
-    console.log("🚀 [Navbar] Logging out...");
     dispatch(logout());
     setIsOpen(false);
     navigate("/");
@@ -74,16 +78,18 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* ACTIONS: Toggle between Login and Dashboard/Logout */}
+        {/* ACTIONS */}
         <div className="flex items-center gap-2 md:gap-4">
           {!token ? (
-            <Link to="/login" className="hidden sm:block">
-              <button className="relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2 hover:border-[#ec4899]/50 transition-all">
-                <span className="text-[10px] md:text-xs font-black uppercase text-white tracking-widest">
-                  Login
-                </span>
-              </button>
-            </Link>
+            /* Desktop Login: Updated to redirect to Vercel */
+            <button
+              onClick={handleLoginRedirect}
+              className="hidden sm:flex relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 border border-white/10 items-center gap-2 hover:border-[#ec4899]/50 transition-all cursor-pointer"
+            >
+              <span className="text-[10px] md:text-xs font-black uppercase text-white tracking-widest">
+                Login
+              </span>
+            </button>
           ) : (
             <div className="hidden sm:flex items-center gap-3">
               <Link to="/dashboard">
@@ -137,11 +143,13 @@ const Navbar = () => {
 
             <div className="pt-6 border-t border-white/5 flex flex-col gap-4">
               {!token ? (
-                <Link to="/login" onClick={() => setIsOpen(false)}>
-                  <button className="w-full py-4 bg-white text-black rounded-2xl font-black uppercase tracking-widest">
-                    Login to Studio
-                  </button>
-                </Link>
+                /* Mobile Login: Updated to redirect to Vercel */
+                <button
+                  onClick={handleLoginRedirect}
+                  className="w-full py-4 bg-white text-black rounded-2xl font-black uppercase tracking-widest"
+                >
+                  Login to Studio
+                </button>
               ) : (
                 <>
                   <Link to="/dashboard" onClick={() => setIsOpen(false)}>

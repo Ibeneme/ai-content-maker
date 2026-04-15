@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Zap, Mail, Cpu } from "lucide-react";
+import { Zap, Cpu } from "lucide-react";
 
 // --- LOCAL ASSET IMPORTS ---
 import a from "../../assets/images/new_a.jpg";
-import b from "../../assets/images/new_b.jpg"
+import b from "../../assets/images/new_b.jpg";
 import c from "../../assets/images/new_c.jpg";
 import d from "../../assets/images/d.png";
 import e from "../../assets/images/e.png";
@@ -12,6 +12,11 @@ import g from "../../assets/images/g.png";
 import h from "../../assets/images/h.png";
 
 const Hero = () => {
+  // Function to handle the redirect
+  const handleStartCreating = () => {
+    window.open("https://your-ai-content-studio.vercel.app", "_blank");
+  };
+
   const generatedScenes = [
     {
       id: 1,
@@ -123,7 +128,9 @@ const Hero = () => {
           transition={{ delay: 0.4 }}
           className="mt-6 md:mt-8 max-w-2xl mx-auto text-zinc-500 text-sm md:text-xl font-medium leading-relaxed"
         >
-          The ultimate studio for consistent identity. Create your AI twin for{" "}
+          The ultimate studio for consistent identity.{" "}
+          <span className="text-[#ec4899] font-black">No prompt needed.</span>{" "}
+          Create your AI twin for{" "}
           <span className="text-white">professional photoshoots</span> or
           generate hyper-consistent images for your wildest{" "}
           <span className="text-white">creative ideas.</span>
@@ -132,22 +139,26 @@ const Hero = () => {
         {/* --- CTAs --- */}
         <div className="flex flex-col sm:flex-row gap-6 md:gap-4 justify-center mt-10 md:mt-12">
           <div className="relative group w-full sm:w-auto">
-            <button className="w-full sm:w-auto bg-[#ec4899] text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 opacity-80 cursor-not-allowed">
-              <Zap size={20} /> LAUNCH STUDIO
+            {/* Updated Button and onClick */}
+            <button
+              onClick={handleStartCreating}
+              className="w-full sm:w-auto bg-[#ec4899] text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer"
+            >
+              <Zap size={20} /> START CREATING NOW
             </button>
             <span className="absolute -top-3 right-4 sm:-right-2 bg-white text-black text-[8px] md:text-[10px] px-2 py-0.5 rounded font-bold">
-              COMING SOON
+              ACTIVE
             </span>
           </div>
 
-          <div className="relative group w-full sm:w-auto">
+          {/* <div className="relative group w-full sm:w-auto">
             <button className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 opacity-80 cursor-not-allowed">
               <Mail size={20} className="text-[#d8b4fe]" /> BOOK A DEMO
             </button>
             <span className="absolute -top-3 right-4 sm:-right-2 bg-[#d8b4fe] text-black text-[8px] md:text-[10px] px-2 py-0.5 rounded font-bold ">
               WAITLIST
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -179,7 +190,6 @@ const Hero = () => {
                 className={`absolute inset-0 bg-gradient-to-t ${scene.color} via-transparent to-transparent opacity-60`}
               />
 
-              {/* Card Content */}
               <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black via-black/20 to-transparent">
                 <div className="overflow-hidden">
                   <motion.p className="text-[10px] font-black text-[#d8b4fe] tracking-[0.2em] mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -202,7 +212,6 @@ const Hero = () => {
   );
 };
 
-// Simple helper component for consistent text rendering
 const AppText = ({
   children,
   className,
