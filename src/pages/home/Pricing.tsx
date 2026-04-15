@@ -10,7 +10,8 @@ const Pricing = () => {
       icon: <Shield className="text-[#d8b4fe]" size={24} />,
       features: [
         "1 Identity Lock Slot",
-        "110 HD Generations / mo",
+        "100 HD & 4K Generations / mo",
+        "8K Cinema Upscaling (5/mo)",
         "Standard Neural Processing",
         "Free 10 Monthly Generations",
       ],
@@ -18,8 +19,6 @@ const Pricing = () => {
       glow: "group-hover:shadow-[0_0_30px_rgba(216,180,254,0.1)]",
     },
   ];
-
-
   return (
     <section className="bg-black py-32 px-6 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#ec4899]/5 blur-[120px] rounded-full pointer-events-none" />
