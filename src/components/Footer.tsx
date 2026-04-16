@@ -43,7 +43,7 @@ const Footer = () => {
           </h2>
 
           <p className="max-w-xl text-zinc-400 text-base md:text-xl font-medium">
-            Join the elite circle of creators using Identity Lock™ to build
+            Join the elite circle of individuals using Identity Lock™ to build
             consistent, hyper-realistic content engines.
           </p>
 
