@@ -54,9 +54,7 @@ const Footer = () => {
             >
               GET STARTED <ArrowUpRight size={24} />
             </button>
-            <span className="absolute -top-4 -right-2 md:-right-4 bg-[#d8b4fe] text-black text-[10px] px-3 py-1 rounded-full font-black uppercase rotate-12">
-              Coming Soon
-            </span>
+        
           </div>
         </motion.div>
       </div>

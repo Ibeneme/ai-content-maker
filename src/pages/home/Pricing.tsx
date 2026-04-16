@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
-import { Check, Lock, Zap, Shield, Users, Mic2, Camera } from "lucide-react";
+import { Check, Zap, Shield, Users, Mic2, Camera } from "lucide-react";
 import studioPreview from "../../assets/images/new_d.jpg";
 
 const Pricing = () => {
+  const handleRedirect = () => {
+    window.open("https://your-ai-content-studio.vercel.app", "_blank");
+  };
+
   const plans = [
     {
       name: "Identity Starter",
@@ -19,6 +23,7 @@ const Pricing = () => {
       glow: "group-hover:shadow-[0_0_30px_rgba(216,180,254,0.1)]",
     },
   ];
+
   return (
     <section className="bg-black py-32 px-6 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#ec4899]/5 blur-[120px] rounded-full pointer-events-none" />
@@ -79,20 +84,24 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <button className="relative w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-zinc-500 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 cursor-not-allowed overflow-hidden group/btn">
-                <Lock size={14} />
-                Coming Soon
+              {/* Updated CTA Button */}
+              <button
+                onClick={handleRedirect}
+                className="relative w-full py-4 rounded-2xl bg-white text-black hover:bg-[#ec4899] hover:text-white transition-colors duration-300 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 cursor-pointer overflow-hidden group/btn"
+              >
+                <Zap size={14} className="fill-current" />
+                Get Started Now
                 <motion.div
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-[#d8b4fe]/10 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                 />
               </button>
             </motion.div>
           ))}
         </div>
 
-        {/* --- STUDIO SECTION (Adjusted for wider image) --- */}
+        {/* --- STUDIO SECTION --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,9 +109,7 @@ const Pricing = () => {
           className="group relative p-1 rounded-[3rem] bg-gradient-to-r from-[#d8b4fe]/20 via-[#ec4899]/20 to-[#d8b4fe]/20 overflow-hidden transition-all duration-700 hover:shadow-[0_0_50px_rgba(236,72,153,0.15)]"
         >
           <div className="relative p-8 md:p-12 rounded-[2.9rem] bg-zinc-950/90 backdrop-blur-3xl overflow-hidden">
-            {/* Grid changed to 12 cols to allow for unequal weighting */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Text Side - 5 columns */}
               <div className="lg:col-span-5">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ec4899]/10 border border-[#ec4899]/20 text-[#ec4899] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
                   <Zap size={12} className="fill-[#ec4899]" />
@@ -140,7 +147,6 @@ const Pricing = () => {
                 </div>
               </div>
 
-              {/* Image Side - 7 columns (Longer Width) */}
               <div className="lg:col-span-7 relative group/img aspect-video rounded-3xl overflow-hidden border border-white/5 bg-zinc-900">
                 <img
                   src={studioPreview}
