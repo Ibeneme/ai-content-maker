@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 import { Zap, Cpu } from "lucide-react";
 
 // --- LOCAL ASSET IMPORTS ---
-import a from  "../../assets/images/new_e.png";
+import a from  "../../assets/images/new_aa.jpg";
 import b from "../../assets/images/new_b.jpg";
 import c from "../../assets/images/new_c.jpg";
 
 
-import g from "../../assets/images/new_a.png";
-import d from "../../assets/images/new_b.png";
-import e from "../../assets/images/new_c.png";
-import f from "../../assets/images/new_d.png";
-import h from "../../assets/images/new_e.png";
+import g from "../../assets/images/new_aa.jpg";
+import d from "../../assets/images/new_bb.jpg";
+import e from "../../assets/images/new_cc.jpg";
+import f from "../../assets/images/new_dd.jpg";
+import h from "../../assets/images/new_ee.jpg";
 
 const Hero = () => {
   // Function to handle the redirect
