@@ -7,7 +7,7 @@ import b from "../../assets/images/new_b.jpg";
 import c from "../../assets/images/new_c.jpg";
 
 
-import g from "../../assets/images/new_a.png";
+import g from "../../assets/images/new_A.png";
 import d from "../../assets/images/new_b.png";
 import e from "../../assets/images/new_c.png";
 import f from "../../assets/images/new_d.png";
