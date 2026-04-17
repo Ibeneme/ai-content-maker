@@ -10,6 +10,8 @@ import f from "../../assets/images/new_d.png";
 import b from "../../assets/images/new_e.png";
 // (Note: g and h are available if you want to swap any below)
 
+
+
 const SynthesisWorkflow = () => {
   const phases = [
     {
