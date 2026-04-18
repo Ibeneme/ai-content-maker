@@ -2,23 +2,24 @@ import { motion } from "framer-motion";
 import { Zap, Cpu } from "lucide-react";
 
 // --- LOCAL ASSET IMPORTS ---
-import a from  "../../assets/images/new_aa.jpg";
+import a from "../../assets/images/new_a.jpg";
 import b from "../../assets/images/new_b.jpg";
 import c from "../../assets/images/new_c.jpg";
-
-
 import g from "../../assets/images/new_aa.jpg";
 import d from "../../assets/images/new_bb.jpg";
 import e from "../../assets/images/new_cc.jpg";
 import f from "../../assets/images/new_dd.jpg";
 import h from "../../assets/images/new_ee.jpg";
+import ee from "../../assets/images/new_nn.jpg";
+import ff from "../../assets/images/new_mm.jpg";
+import hh from "../../assets/images/new_oo.jpg";
 
 const Hero = () => {
-  // Function to handle the redirect
   const handleStartCreating = () => {
     window.open("https://your-ai-content-studio.vercel.app", "_blank");
   };
 
+  // Updated to include all unique imports: a, b, c, d, e, f, g, h, ee, ff, hh
   const generatedScenes = [
     {
       id: 1,
@@ -75,6 +76,27 @@ const Hero = () => {
       color: "from-[#ec4899]/20",
       image: h,
       desc: "Spatial awareness.",
+    },
+    {
+      id: 9,
+      label: "NEURAL: CORE SYNTH",
+      color: "from-[#d8b4fe]/20",
+      image: ee,
+      desc: "Deep layer processing.",
+    },
+    {
+      id: 10,
+      label: "STUDIO: ALPHA",
+      color: "from-[#ec4899]/20",
+      image: ff,
+      desc: "Dynamic lighting rig.",
+    },
+    {
+      id: 11,
+      label: "VISUAL: OPTIMIZED",
+      color: "from-[#d8b4fe]/20",
+      image: hh,
+      desc: "Sub-pixel refinement.",
     },
   ];
 
@@ -141,7 +163,6 @@ const Hero = () => {
         {/* --- CTAs --- */}
         <div className="flex flex-col sm:flex-row gap-6 md:gap-4 justify-center mt-10 md:mt-12">
           <div className="relative group w-full sm:w-auto">
-            {/* Updated Button and onClick */}
             <button
               onClick={handleStartCreating}
               className="w-full sm:w-auto bg-[#ec4899] text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer"
@@ -152,15 +173,6 @@ const Hero = () => {
               ACTIVE
             </span>
           </div>
-
-          {/* <div className="relative group w-full sm:w-auto">
-            <button className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 opacity-80 cursor-not-allowed">
-              <Mail size={20} className="text-[#d8b4fe]" /> BOOK A DEMO
-            </button>
-            <span className="absolute -top-3 right-4 sm:-right-2 bg-[#d8b4fe] text-black text-[8px] md:text-[10px] px-2 py-0.5 rounded font-bold ">
-              WAITLIST
-            </span>
-          </div> */}
         </div>
       </div>
 
@@ -168,12 +180,13 @@ const Hero = () => {
       <div className="relative w-full py-16 border-y border-white/5 bg-zinc-900/10 backdrop-blur-xl mt-10">
         <motion.div
           animate={{ x: [0, -2000] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
           className="flex gap-6"
         >
+          {/* Doubled the unique set for a seamless loop */}
           {[...generatedScenes, ...generatedScenes].map((scene, idx) => (
             <motion.div
-              key={idx}
+              key={`${scene.id}-${idx}`}
               whileHover={{
                 rotateY: 15,
                 rotateX: -5,

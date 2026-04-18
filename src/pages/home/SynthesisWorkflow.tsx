@@ -3,14 +3,12 @@ import { UserCheck, Fingerprint, Layers, Camera, Globe } from "lucide-react";
 
 // Local Asset Imports
 //import b from "../../assets/images/b.png";
-import c from "../../assets/images/new_aa.jpg";
-import d from "../../assets/images/new_bb.jpg";
-import e from "../../assets/images/new_cc.jpg";
-import f from "../../assets/images/new_dd.jpg";
-import b from "../../assets/images/new_ee.jpg";
+import c from "../../assets/images/t.png";
+import d from "../../assets/images/d.png";
+import e from "../../assets/images/s.png";
+import f from "../../assets/images/w.png";
+import b from "../../assets/images/new_c.jpg";
 // (Note: g and h are available if you want to swap any below)
-
-
 
 const SynthesisWorkflow = () => {
   const phases = [

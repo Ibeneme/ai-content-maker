@@ -1,8 +1,17 @@
+
+import d from "../../assets/images/new_dd.jpg";
+import e from "../../assets/images/new_nn.jpg";
+import f from "../../assets/images/new_mm.jpg";
+import h from "../../assets/images/new_oo.jpg";
 import { motion } from "framer-motion";
 import { Check, Zap, Shield, Users, Mic2, Camera } from "lucide-react";
+
+// --- LOCAL ASSET IMPORTS ---
 import studioPreview from "../../assets/images/new_d.jpg";
 
 const Pricing = () => {
+  const galleryImages = [studioPreview, d, e, f, h];
+
   const handleRedirect = () => {
     window.open("https://your-ai-content-studio.vercel.app", "_blank");
   };
@@ -29,11 +38,12 @@ const Pricing = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#ec4899]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header Section */}
         <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6"
+            className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 text-white"
           >
             Access{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8b4fe] to-[#ec4899]">
@@ -46,7 +56,8 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="flex justify-center mb-12">
+        {/* Pricing Card */}
+        <div className="flex justify-center mb-24">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
@@ -84,7 +95,6 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              {/* Updated CTA Button */}
               <button
                 onClick={handleRedirect}
                 className="relative w-full py-4 rounded-2xl bg-white text-black hover:bg-[#ec4899] hover:text-white transition-colors duration-300 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 cursor-pointer overflow-hidden group/btn"
@@ -101,17 +111,20 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* --- STUDIO SECTION --- */}
+        {/* --- STUDIO SECTION (FLEX ROW + GRID IMAGES) --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="group relative p-1 rounded-[3rem] bg-gradient-to-r from-[#d8b4fe]/20 via-[#ec4899]/20 to-[#d8b4fe]/20 overflow-hidden transition-all duration-700 hover:shadow-[0_0_50px_rgba(236,72,153,0.15)]"
+          className="group relative p-1 rounded-[3rem] bg-gradient-to-r from-[#d8b4fe]/20 via-[#ec4899]/20 to-[#d8b4fe]/20 overflow-hidden transition-all duration-700"
         >
-          <div className="relative p-8 md:p-12 rounded-[2.9rem] bg-zinc-950/90 backdrop-blur-3xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-5">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ec4899]/10 border border-[#ec4899]/20 text-[#ec4899] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+          <div className="relative p-8 md:p-12 rounded-[2.9rem] bg-zinc-950/90 backdrop-blur-3xl">
+            {/* Flex Container for Text vs Images */}
+            <div className="flex flex-col lg:flex-row gap-12 items-center">
+              
+              {/* Left Side: Columned Text Headers */}
+              <div className="flex flex-col flex-1 text-left">
+                <div className="inline-flex w-fit items-center gap-2 px-4 py-1.5 rounded-full bg-[#ec4899]/10 border border-[#ec4899]/20 text-[#ec4899] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
                   <Zap size={12} className="fill-[#ec4899]" />
                   Internal Alpha Test
                 </div>
@@ -122,7 +135,7 @@ const Pricing = () => {
                   </span>{" "}
                   Generator
                 </h3>
-                <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
+                <p className="text-zinc-400 text-lg mb-8 leading-relaxed max-w-md">
                   Generate realistic multi-person scenes, including podcast
                   panels with multiple speakers and cinematic camera angles.
                 </p>
@@ -130,10 +143,7 @@ const Pricing = () => {
                 <div className="flex flex-wrap gap-4">
                   {[
                     { icon: <Users size={14} />, label: "3 Person Clusters" },
-                    {
-                      icon: <Mic2 size={14} />,
-                      label: "Studio Acoustics Meta",
-                    },
+                    { icon: <Mic2 size={14} />, label: "Studio Acoustics Meta" },
                     { icon: <Camera size={14} />, label: "Multi-Cam Sync" },
                   ].map((badge, idx) => (
                     <div
@@ -147,31 +157,41 @@ const Pricing = () => {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 relative group/img aspect-video rounded-3xl overflow-hidden border border-white/5 bg-zinc-900">
-                <img
-                  src={studioPreview}
-                  alt="Studio Generator Preview"
-                  className="w-full h-full object-cover opacity-100 transition-all duration-700"
-                />
-                <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#d8b4fe]/40" />
-                <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#ec4899]/40" />
+              {/* Right Side: Gridded Images (2 Columns) */}
+              <div className="flex-1 grid grid-cols-2 gap-4">
+                {galleryImages.slice(0, 4).map((img, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 bg-zinc-900"
+                  >
+                    <img
+                      src={img}
+                      alt={`Gallery ${idx}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                ))}
               </div>
+
             </div>
           </div>
         </motion.div>
 
+        {/* --- WAITLIST SECTION --- */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="mt-20 flex flex-col items-center gap-4 text-center"
+          className="mt-24 flex flex-col items-center gap-6 text-center"
         >
-          <div className="flex -space-x-2">
-            {[1, 2, 3, 4].map((i) => (
+          <div className="flex -space-x-3">
+            {[d, e, f, h].map((img, i) => (
               <div
                 key={i}
-                className="w-8 h-8 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center text-[10px] font-bold text-white"
+                className="w-12 h-12 rounded-full border-2 border-black overflow-hidden bg-zinc-800 shadow-xl"
               >
-                {String.fromCharCode(64 + i)}
+                <img src={img} className="w-full h-full object-cover" alt="User" />
               </div>
             ))}
           </div>
