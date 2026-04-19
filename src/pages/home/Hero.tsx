@@ -4,7 +4,7 @@ import { Zap, Cpu } from "lucide-react";
 // --- LOCAL ASSET IMPORTS ---
 import a from "../../assets/images/new_a.jpg";
 import b from "../../assets/images/new_b.jpg";
-import c from "../../assets/images/new_c.jpg";
+// import c from "../../assets/images/new_c.jpg";
 import g from "../../assets/images/new_aa.jpg";
 import d from "../../assets/images/new_bb.jpg";
 import e from "../../assets/images/new_cc.jpg";
@@ -35,13 +35,13 @@ const Hero = () => {
       image: b,
       desc: "8K Octane render.",
     },
-    {
-      id: 3,
-      label: "IDEATION: CONSISTENT STYLE",
-      color: "from-[#d8b4fe]/20",
-      image: c,
-      desc: "Global style lock.",
-    },
+    // {
+    //   id: 3,
+    //   label: "IDEATION: CONSISTENT STYLE",
+    //   color: "from-[#d8b4fe]/20",
+    //   image: c,
+    //   desc: "Global style lock.",
+    // },
     {
       id: 4,
       label: "EDITORIAL: VOGUE STYLE",
@@ -64,19 +64,20 @@ const Hero = () => {
       desc: "Atmospheric depth.",
     },
     {
-      id: 7,
-      label: "AVATAR: HIGH FIDELITY",
-      color: "from-[#d8b4fe]/20",
-      image: g,
-      desc: "Skin-pore accuracy.",
-    },
-    {
       id: 8,
       label: "RENDER: ARCHITECTURAL",
       color: "from-[#ec4899]/20",
       image: h,
       desc: "Spatial awareness.",
     },
+    // {
+    //   id: 7,
+    //   label: "AVATAR: HIGH FIDELITY",
+    //   color: "from-[#d8b4fe]/20",
+    //   image: g,
+    //   desc: "Skin-pore accuracy.",
+    // },
+
     {
       id: 9,
       label: "NEURAL: CORE SYNTH",
@@ -98,6 +99,7 @@ const Hero = () => {
       image: hh,
       desc: "Sub-pixel refinement.",
     },
+    
   ];
 
   return (

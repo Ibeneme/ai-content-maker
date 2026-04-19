@@ -8,7 +8,7 @@ import c from "../../assets/images/c.png";
 // import d from "../../assets/images/d.png";
 import e from "../../assets/images/e.png";
 // import f from "../../assets/images/f.png";
-import g from "../../assets/images/g.png";
+import g from "../../assets/images/x.jpg";
 // import h from "../../assets/images/h.png";
 // import j from "../../assets/images/j.png";
 // import k from "../../assets/images/k.png";
@@ -40,8 +40,8 @@ const Gallery = () => {
     // { id: 11, type: "Lighting Study", url: l, span: "col-span-1" },
     // { id: 12, type: "Vogue Protocol", url: m, span: "md:col-span-2" },
     // Added new generation items
-   // { id: 13, type: "Hyper-Real", url: y, span: "col-span-1" },
-   // { id: 14, type: "Aero Dynamic", url: z, span: "col-span-1" },
+    // { id: 13, type: "Hyper-Real", url: y, span: "col-span-1" },
+    // { id: 14, type: "Aero Dynamic", url: z, span: "col-span-1" },
 
     //{ id: 13, type: "Hyper-Real", url: n, span: "col-span-1" },
     // { id: 14, type: "Aero Dynamic", url: o, span: "col-span-1" },
