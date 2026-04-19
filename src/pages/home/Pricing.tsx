@@ -1,4 +1,3 @@
-
 import d from "../../assets/images/new_dd.jpg";
 import e from "../../assets/images/new_nn.jpg";
 import f from "../../assets/images/new_mm.jpg";
@@ -10,7 +9,8 @@ import { Check, Zap, Shield, Users, Mic2, Camera } from "lucide-react";
 import studioPreview from "../../assets/images/new_d.jpg";
 
 const Pricing = () => {
-  const galleryImages = [studioPreview, d, e, f, h];
+  // REMOVED the second image from the original array
+  const galleryImages = [studioPreview, e, f, h];
 
   const handleRedirect = () => {
     window.open("https://your-ai-content-studio.vercel.app", "_blank");
@@ -111,7 +111,7 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* --- STUDIO SECTION (FLEX ROW + GRID IMAGES) --- */}
+        {/* --- STUDIO SECTION --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,10 +119,8 @@ const Pricing = () => {
           className="group relative p-1 rounded-[3rem] bg-gradient-to-r from-[#d8b4fe]/20 via-[#ec4899]/20 to-[#d8b4fe]/20 overflow-hidden transition-all duration-700"
         >
           <div className="relative p-8 md:p-12 rounded-[2.9rem] bg-zinc-950/90 backdrop-blur-3xl">
-            {/* Flex Container for Text vs Images */}
             <div className="flex flex-col lg:flex-row gap-12 items-center">
-              
-              {/* Left Side: Columned Text Headers */}
+              {/* Left Side: Text Content */}
               <div className="flex flex-col flex-1 text-left">
                 <div className="inline-flex w-fit items-center gap-2 px-4 py-1.5 rounded-full bg-[#ec4899]/10 border border-[#ec4899]/20 text-[#ec4899] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
                   <Zap size={12} className="fill-[#ec4899]" />
@@ -143,7 +141,10 @@ const Pricing = () => {
                 <div className="flex flex-wrap gap-4">
                   {[
                     { icon: <Users size={14} />, label: "3 Person Clusters" },
-                    { icon: <Mic2 size={14} />, label: "Studio Acoustics Meta" },
+                    {
+                      icon: <Mic2 size={14} />,
+                      label: "Studio Acoustics Meta",
+                    },
                     { icon: <Camera size={14} />, label: "Multi-Cam Sync" },
                   ].map((badge, idx) => (
                     <div
@@ -157,14 +158,18 @@ const Pricing = () => {
                 </div>
               </div>
 
-              {/* Right Side: Gridded Images (2 Columns) */}
+              {/* Right Side: Gridded Images */}
               <div className="flex-1 grid grid-cols-2 gap-4">
-                {galleryImages.slice(0, 4).map((img, idx) => (
-                  <motion.div 
+                {galleryImages.slice(0, 3).map((img, idx) => (
+                  <motion.div
                     key={idx}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 bg-zinc-900"
+                    /* idx === 0 spans 2 columns. Others are set to aspect-[4/5] for extra height */
+                    className={`relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 
+                      ${
+                        idx === 0 ? "col-span-2 aspect-video" : "aspect-[4/5]"
+                      }`}
                   >
                     <img
                       src={img}
@@ -174,7 +179,6 @@ const Pricing = () => {
                   </motion.div>
                 ))}
               </div>
-
             </div>
           </div>
         </motion.div>
@@ -191,7 +195,11 @@ const Pricing = () => {
                 key={i}
                 className="w-12 h-12 rounded-full border-2 border-black overflow-hidden bg-zinc-800 shadow-xl"
               >
-                <img src={img} className="w-full h-full object-cover" alt="User" />
+                <img
+                  src={img}
+                  className="w-full h-full object-cover"
+                  alt="User"
+                />
               </div>
             ))}
           </div>
