@@ -4,13 +4,12 @@ import f from "../../assets/images/new_mm.jpg";
 import h from "../../assets/images/new_oo.jpg";
 
 import { motion } from "framer-motion";
-import { Check, Zap, Shield, Users, Mic2, Camera } from "lucide-react";
+import { Check, Zap, Shield, Users, Mic2, Camera, Lock } from "lucide-react";
 
 // --- LOCAL ASSET IMPORTS ---
 import studioPreview from "../../assets/images/new_d.jpg";
 
 const Pricing = () => {
-  // REMOVED the second image from the original array
   const galleryImages = [studioPreview, e, f, h];
 
   const handleRedirect = () => {
@@ -112,45 +111,50 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* --- STUDIO SECTION --- */}
+        {/* --- STUDIO SECTION (COMING SOON) --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="group relative p-1 rounded-[3rem] bg-gradient-to-r from-[#d8b4fe]/20 via-[#ec4899]/20 to-[#d8b4fe]/20 overflow-hidden transition-all duration-700"
+          className="group relative p-1 rounded-[3rem] bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 overflow-hidden transition-all duration-700"
         >
-          <div className="relative p-8 md:p-12 rounded-[2.9rem] bg-zinc-950/90 backdrop-blur-3xl">
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <div className="relative p-8 md:p-12 rounded-[2.9rem] bg-zinc-950/90 backdrop-blur-3xl overflow-hidden">
+            {/* COMING SOON OVERLAY ELEMENTS */}
+            <div className="absolute inset-0 bg-black/40 z-20 flex items-center justify-center backdrop-blur-[2px] group-hover:backdrop-blur-none transition-all duration-500">
+              <div className="absolute top-10 right-10 rotate-12">
+                <div className="px-6 py-2 bg-[#ec4899] text-white font-black uppercase tracking-[0.3em] text-sm shadow-[0_0_30px_rgba(236,72,153,0.5)]">
+                  Coming Soon
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col lg:flex-row gap-12 items-center relative z-10">
               {/* Left Side: Text Content */}
-              <div className="flex flex-col flex-1 text-left">
-                <div className="inline-flex w-fit items-center gap-2 px-4 py-1.5 rounded-full bg-[#ec4899]/10 border border-[#ec4899]/20 text-[#ec4899] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
-                  <Zap size={12} className="fill-[#ec4899]" />
-                  Internal Alpha Test
+              <div className="flex flex-col flex-1 text-left opacity-60 group-hover:opacity-100 transition-opacity">
+                <div className="inline-flex w-fit items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+                  <Lock size={12} />
+                  Development Phase
                 </div>
                 <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6 leading-none">
                   Multi-Person & <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8b4fe] to-[#ec4899]">
-                    Podcast Studio
-                  </span>{" "}
+                  <span className="text-zinc-500">Podcast Studio</span>{" "}
                   Generator
                 </h3>
-                <p className="text-zinc-400 text-lg mb-8 leading-relaxed max-w-md">
-                  Generate realistic multi-person scenes, including podcast
-                  panels with multiple speakers and cinematic camera angles.
+                <p className="text-zinc-500 text-lg mb-8 leading-relaxed max-w-md">
+                  We're building the first generative engine capable of handling
+                  multiple distinct identities in a single frame with zero
+                  bleed.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
                   {[
                     { icon: <Users size={14} />, label: "3 Person Clusters" },
-                    {
-                      icon: <Mic2 size={14} />,
-                      label: "Studio Acoustics Meta",
-                    },
+                    { icon: <Mic2 size={14} />, label: "Studio Acoustics" },
                     { icon: <Camera size={14} />, label: "Multi-Cam Sync" },
                   ].map((badge, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-300 text-xs font-bold uppercase tracking-wider"
+                      className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-500 text-xs font-bold uppercase tracking-wider"
                     >
                       {badge.icon}
                       {badge.label}
@@ -160,13 +164,10 @@ const Pricing = () => {
               </div>
 
               {/* Right Side: Gridded Images */}
-              <div className="flex-1 grid grid-cols-2 gap-4">
+              <div className="flex-1 grid grid-cols-2 gap-4 filter grayscale contrast-125 opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700">
                 {galleryImages.slice(0, 3).map((img, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    /* idx === 0 spans 2 columns. Others are set to aspect-[4/5] for extra height */
                     className={`relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 
                       ${
                         idx === 0 ? "col-span-2 aspect-video" : "aspect-[4/5]"
@@ -206,7 +207,7 @@ const Pricing = () => {
           </div>
           <p className="text-zinc-500 text-xs uppercase tracking-[0.3em]">
             Join 4,000+ creators in the{" "}
-            <span className="text-[#d8b4fe]">Waitlist</span>
+            <span className="text-[#ec4899] font-bold">Waitlist</span>
           </p>
         </motion.div>
       </div>
