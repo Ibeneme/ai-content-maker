@@ -3,20 +3,27 @@ import { Camera, Zap, Maximize2 } from "lucide-react";
 
 // Local Asset Imports
 import a from "../../assets/images/a.png";
+
 //import b from "../../assets/images/b.png";
 import c from "../../assets/images/c.png";
+
 // import d from "../../assets/images/d.png";
 import e from "../../assets/images/e.png";
+
 // import f from "../../assets/images/f.png";
-import g from "../../assets/images/x.png";
+import g from "../../assets/images/sars.jpg";
+
 // import h from "../../assets/images/h.png";
 // import j from "../../assets/images/j.png";
 // import k from "../../assets/images/k.png";
+
 import l from "../../assets/images/l.png";
 import m from "../../assets/images/m.png";
 import n from "../../assets/images/n.png";
+
 // Added missing imports
 //import o from "../../assets/images/o.png";
+
 import p from "../../assets/images/o.png";
 import q from "../../assets/images/q.png";
 import y from "../../assets/images/y.png";
