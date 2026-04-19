@@ -8,7 +8,7 @@ import c from "../../assets/images/c.png";
 // import d from "../../assets/images/d.png";
 import e from "../../assets/images/e.png";
 // import f from "../../assets/images/f.png";
-import g from "../../assets/images/x.jpg";
+import g from "../../assets/images/x.png";
 // import h from "../../assets/images/h.png";
 // import j from "../../assets/images/j.png";
 // import k from "../../assets/images/k.png";

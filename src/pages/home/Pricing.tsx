@@ -1,7 +1,8 @@
 import d from "../../assets/images/new_dd.jpg";
-import e from "../../assets/images/new_nn.jpg";
+import e from "../../assets/images/x.jpg";
 import f from "../../assets/images/new_mm.jpg";
 import h from "../../assets/images/new_oo.jpg";
+
 import { motion } from "framer-motion";
 import { Check, Zap, Shield, Users, Mic2, Camera } from "lucide-react";
 

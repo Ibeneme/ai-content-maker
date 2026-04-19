@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Zap, Cpu } from "lucide-react";
 
 // --- LOCAL ASSET IMPORTS ---
-import a from "../../assets/images/new_a.jpg";
-import b from "../../assets/images/new_b.jpg";
+// import a from "../../assets/images/new_a.jpg";
+// import b from "../../assets/images/new_b.jpg";
 // import c from "../../assets/images/new_c.jpg";
 //import g from "../../assets/images/new_aa.jpg";
 import d from "../../assets/images/new_bb.jpg";
@@ -11,7 +11,7 @@ import e from "../../assets/images/new_cc.jpg";
 import f from "../../assets/images/new_dd.jpg";
 import h from "../../assets/images/new_ee.jpg";
 import ee from "../../assets/images/new_nn.jpg";
-import ff from "../../assets/images/new_mm.jpg";
+// import ff from "../../assets/images/new_mm.jpg";
 import hh from "../../assets/images/new_oo.jpg";
 
 const Hero = () => {
@@ -21,20 +21,20 @@ const Hero = () => {
 
   // Updated to include all unique imports: a, b, c, d, e, f, g, h, ee, ff, hh
   const generatedScenes = [
-    {
-      id: 1,
-      label: "DIGITAL TWIN: ACTIVE",
-      color: "from-[#d8b4fe]/20",
-      image: a,
-      desc: "Neural mapping complete.",
-    },
-    {
-      id: 2,
-      label: "PRO: STUDIO LIGHTING",
-      color: "from-[#ec4899]/20",
-      image: b,
-      desc: "8K Octane render.",
-    },
+    // {
+    //   id: 1,
+    //   label: "DIGITAL TWIN: ACTIVE",
+    //   color: "from-[#d8b4fe]/20",
+    //   image: a,
+    //   desc: "Neural mapping complete.",
+    // },
+    // {
+    //   id: 2,
+    //   label: "PRO: STUDIO LIGHTING",
+    //   color: "from-[#ec4899]/20",
+    //   image: b,
+    //   desc: "8K Octane render.",
+    // },
     // {
     //   id: 3,
     //   label: "IDEATION: CONSISTENT STYLE",
@@ -43,18 +43,18 @@ const Hero = () => {
     //   desc: "Global style lock.",
     // },
     {
+      id: 11,
+      label: "VISUAL: OPTIMIZED",
+      color: "from-[#d8b4fe]/20",
+      image: hh,
+      desc: "Sub-pixel refinement.",
+    },
+    {
       id: 4,
       label: "EDITORIAL: VOGUE STYLE",
       color: "from-[#ec4899]/20",
       image: d,
       desc: "High-fashion synthesis.",
-    },
-    {
-      id: 5,
-      label: "TWIN: LIFESTYLE RENDER",
-      color: "from-[#d8b4fe]/20",
-      image: e,
-      desc: "Natural environment.",
     },
     {
       id: 6,
@@ -64,12 +64,13 @@ const Hero = () => {
       desc: "Atmospheric depth.",
     },
     {
-      id: 8,
-      label: "RENDER: ARCHITECTURAL",
-      color: "from-[#ec4899]/20",
-      image: h,
-      desc: "Spatial awareness.",
+      id: 5,
+      label: "TWIN: LIFESTYLE RENDER",
+      color: "from-[#d8b4fe]/20",
+      image: e,
+      desc: "Natural environment.",
     },
+
     // {
     //   id: 7,
     //   label: "AVATAR: HIGH FIDELITY",
@@ -85,20 +86,22 @@ const Hero = () => {
       image: ee,
       desc: "Deep layer processing.",
     },
+
     {
-      id: 10,
-      label: "STUDIO: ALPHA",
+      id: 8,
+      label: "RENDER: ARCHITECTURAL",
       color: "from-[#ec4899]/20",
-      image: ff,
-      desc: "Dynamic lighting rig.",
+      image: h,
+      desc: "Spatial awareness.",
     },
-    {
-      id: 11,
-      label: "VISUAL: OPTIMIZED",
-      color: "from-[#d8b4fe]/20",
-      image: hh,
-      desc: "Sub-pixel refinement.",
-    },
+    // {
+    //   id: 10,
+    //   label: "STUDIO: ALPHA",
+    //   color: "from-[#ec4899]/20",
+    //   image: ff,
+    //   desc: "Dynamic lighting rig.",
+    // },
+
     
   ];
 
