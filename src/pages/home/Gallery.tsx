@@ -50,7 +50,7 @@ const Gallery = () => {
   ];
 
   // Updated variants to include more diversity from your new images
-  const variants = [e, m, l, n, y, z];
+  const variants = [z, m, l, n, y, e];
 
   return (
     <div className="bg-black min-h-screen pt-32 pb-20">
