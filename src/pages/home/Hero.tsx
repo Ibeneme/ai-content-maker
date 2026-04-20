@@ -63,13 +63,13 @@ const Hero = () => {
       image: f,
       desc: "Atmospheric depth.",
     },
-    {
-      id: 5,
-      label: "TWIN: LIFESTYLE RENDER",
-      color: "from-[#d8b4fe]/20",
-      image: e,
-      desc: "Natural environment.",
-    },
+    // {
+    //   id: 5,
+    //   label: "TWIN: LIFESTYLE RENDER",
+    //   color: "from-[#d8b4fe]/20",
+    //   image: e,
+    //   desc: "Natural environment.",
+    // },
 
     // {
     //   id: 7,
