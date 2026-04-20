@@ -7,7 +7,7 @@ import { Zap, Cpu } from "lucide-react";
 // import c from "../../assets/images/new_c.jpg";
 //import g from "../../assets/images/new_aa.jpg";
 import d from "../../assets/images/new_bb.jpg";
-import e from "../../assets/images/new_cc.jpg";
+//import e from "../../assets/images/new_cc.jpg";
 import f from "../../assets/images/new_dd.jpg";
 import h from "../../assets/images/new_ee.jpg";
 import ee from "../../assets/images/new_nn.jpg";

@@ -1,5 +1,5 @@
 import d from "../../assets/images/new_dd.jpg";
-import e from "../../assets/images/x.jpg";
+import e from "../../assets/images/twin.jpg";
 import f from "../../assets/images/new_mm.jpg";
 import h from "../../assets/images/new_oo.jpg";
 
@@ -35,6 +35,7 @@ const Pricing = () => {
 
   return (
     <section className="bg-black py-32 px-6 relative overflow-hidden">
+      {/* pointer-events-none ensures this glow doesn't block button clicks */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#ec4899]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -97,14 +98,14 @@ const Pricing = () => {
 
               <button
                 onClick={handleRedirect}
-                className="relative w-full py-4 rounded-2xl bg-white text-black hover:bg-[#ec4899] hover:text-white transition-colors duration-300 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 cursor-pointer overflow-hidden group/btn"
+                className="relative z-30 w-full py-4 rounded-2xl bg-white text-black hover:bg-[#ec4899] hover:text-white transition-colors duration-300 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 cursor-pointer overflow-hidden group/btn"
               >
                 <Zap size={14} className="fill-current" />
                 Get Started Now
                 <motion.div
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"
                 />
               </button>
             </motion.div>
@@ -119,8 +120,8 @@ const Pricing = () => {
           className="relative p-1 rounded-[3rem] bg-gradient-to-r from-[#d8b4fe]/40 via-[#ec4899]/40 to-[#d8b4fe]/40 overflow-hidden"
         >
           <div className="relative p-8 md:p-12 rounded-[2.9rem] bg-zinc-950/90 backdrop-blur-3xl overflow-hidden">
-            {/* COMING SOON BADGE - Clean & Colorful */}
-            <div className="absolute top-10 right-10 rotate-12 z-30">
+            {/* COMING SOON BADGE */}
+            <div className="absolute top-10 right-10 rotate-12 z-30 pointer-events-none">
               <div className="px-6 py-2 bg-[#ec4899] text-white font-black uppercase tracking-[0.3em] text-sm shadow-[0_0_30px_rgba(236,72,153,0.5)]">
                 Coming Soon
               </div>
@@ -172,14 +173,14 @@ const Pricing = () => {
                 </div>
               </div>
 
-              {/* Right Side: Gridded Images (Colorful) */}
+              {/* Right Side: Gridded Images */}
               <div className="flex-1 grid grid-cols-2 gap-4">
                 {galleryImages.slice(0, 3).map((img, idx) => (
                   <div
                     key={idx}
                     className={`relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 
                       ${
-                        idx === 0 ? "col-span-2 aspect-video" : "aspect-[4/5]"
+                        idx === 0 ? "col-span-2 aspect-video" : "aspect-[2/3]" // Increased height for the two images in the row
                       }`}
                   >
                     <img
