@@ -19,14 +19,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-
   const { token } = useSelector((state: RootState) => state.auth);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Function to handle external login redirect
-  const handleLoginRedirect = () => {
-    window.open("https://your-ai-content-studio.vercel.app", "_blank");
+  // Updated external links
+  const handleAISudioLogin = () => {
+    window.open("https://aivideostudio.vercel.app/", "_blank");
+    setIsOpen(false);
+  };
+
+  const handleVoiceOverLogin = () => {
+    window.open("https://aivideostudio.vercel.app/", "_blank"); // Same link or update if different
     setIsOpen(false);
   };
 
@@ -81,15 +85,26 @@ const Navbar = () => {
         {/* ACTIONS */}
         <div className="flex items-center gap-2 md:gap-4">
           {!token ? (
-            /* Desktop Login: Updated to redirect to Vercel */
-            <button
-              onClick={handleLoginRedirect}
-              className="hidden sm:flex relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 border border-white/10 items-center gap-2 hover:border-[#ec4899]/50 transition-all cursor-pointer"
-            >
-              <span className="text-[10px] md:text-xs font-black uppercase text-white tracking-widest">
-                Login
-              </span>
-            </button>
+            /* Desktop Login Buttons - Updated with AI Studio + Voice Over */
+            <div className="hidden sm:flex items-center gap-3">
+              <button
+                onClick={handleAISudioLogin}
+                className="relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 border border-white/10 items-center gap-2 hover:border-[#ec4899]/50 transition-all cursor-pointer"
+              >
+                <span className="text-[10px] md:text-xs font-black uppercase text-white tracking-widest">
+                  AI Studio
+                </span>
+              </button>
+
+              <button
+                onClick={handleVoiceOverLogin}
+                className="relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 border border-white/10 items-center gap-2 hover:border-[#ec4899]/50 transition-all cursor-pointer"
+              >
+                <span className="text-[10px] md:text-xs font-black uppercase text-white tracking-widest">
+                  Voice Over
+                </span>
+              </button>
+            </div>
           ) : (
             <div className="hidden sm:flex items-center gap-3">
               <Link to="/dashboard">
@@ -143,13 +158,20 @@ const Navbar = () => {
 
             <div className="pt-6 border-t border-white/5 flex flex-col gap-4">
               {!token ? (
-                /* Mobile Login: Updated to redirect to Vercel */
-                <button
-                  onClick={handleLoginRedirect}
-                  className="w-full py-4 bg-white text-black rounded-2xl font-black uppercase tracking-widest"
-                >
-                  Login to Studio
-                </button>
+                <>
+                  <button
+                    onClick={handleAISudioLogin}
+                    className="w-full py-4 bg-white text-black rounded-2xl font-black uppercase tracking-widest"
+                  >
+                    Login to AI Studio
+                  </button>
+                  <button
+                    onClick={handleVoiceOverLogin}
+                    className="w-full py-4 bg-white text-black rounded-2xl font-black uppercase tracking-widest"
+                  >
+                    Login to Voice Over
+                  </button>
+                </>
               ) : (
                 <>
                   <Link to="/dashboard" onClick={() => setIsOpen(false)}>

@@ -2,46 +2,23 @@ import { motion } from "framer-motion";
 import { Zap, Cpu } from "lucide-react";
 
 // --- LOCAL ASSET IMPORTS ---
-// import a from "../../assets/images/new_a.jpg";
-// import b from "../../assets/images/new_b.jpg";
-// import c from "../../assets/images/new_c.jpg";
-//import g from "../../assets/images/new_aa.jpg";
 import d from "../../assets/images/new_bb.jpg";
-//import e from "../../assets/images/new_cc.jpg";
 import f from "../../assets/images/new_dd.jpg";
 import h from "../../assets/images/new_ee.jpg";
 import ee from "../../assets/images/new_nn.jpg";
-// import ff from "../../assets/images/new_mm.jpg";
 import hh from "../../assets/images/new_oo.jpg";
 
 const Hero = () => {
-  const handleStartCreating = () => {
-    window.open("https://your-ai-content-studio.vercel.app", "_blank");
+  // New handlers for the two platforms
+  const handleAISudio = () => {
+    window.open("https://aivideostudio.vercel.app/", "_blank");
   };
 
-  // Updated to include all unique imports: a, b, c, d, e, f, g, h, ee, ff, hh
+  const handleVoiceOver = () => {
+    window.open("https://aivideostudio.vercel.app/", "_blank");
+  };
+
   const generatedScenes = [
-    // {
-    //   id: 1,
-    //   label: "DIGITAL TWIN: ACTIVE",
-    //   color: "from-[#d8b4fe]/20",
-    //   image: a,
-    //   desc: "Neural mapping complete.",
-    // },
-    // {
-    //   id: 2,
-    //   label: "PRO: STUDIO LIGHTING",
-    //   color: "from-[#ec4899]/20",
-    //   image: b,
-    //   desc: "8K Octane render.",
-    // },
-    // {
-    //   id: 3,
-    //   label: "IDEATION: CONSISTENT STYLE",
-    //   color: "from-[#d8b4fe]/20",
-    //   image: c,
-    //   desc: "Global style lock.",
-    // },
     {
       id: 11,
       label: "VISUAL: OPTIMIZED",
@@ -63,22 +40,6 @@ const Hero = () => {
       image: f,
       desc: "Atmospheric depth.",
     },
-    // {
-    //   id: 5,
-    //   label: "TWIN: LIFESTYLE RENDER",
-    //   color: "from-[#d8b4fe]/20",
-    //   image: e,
-    //   desc: "Natural environment.",
-    // },
-
-    // {
-    //   id: 7,
-    //   label: "AVATAR: HIGH FIDELITY",
-    //   color: "from-[#d8b4fe]/20",
-    //   image: g,
-    //   desc: "Skin-pore accuracy.",
-    // },
-
     {
       id: 9,
       label: "NEURAL: CORE SYNTH",
@@ -86,7 +47,6 @@ const Hero = () => {
       image: ee,
       desc: "Deep layer processing.",
     },
-
     {
       id: 8,
       label: "RENDER: ARCHITECTURAL",
@@ -94,15 +54,6 @@ const Hero = () => {
       image: h,
       desc: "Spatial awareness.",
     },
-    // {
-    //   id: 10,
-    //   label: "STUDIO: ALPHA",
-    //   color: "from-[#ec4899]/20",
-    //   image: ff,
-    //   desc: "Dynamic lighting rig.",
-    // },
-
-    
   ];
 
   return (
@@ -165,19 +116,26 @@ const Hero = () => {
           <span className="text-white">creative ideas.</span>
         </motion.p>
 
-        {/* --- CTAs --- */}
-        <div className="flex flex-col sm:flex-row gap-6 md:gap-4 justify-center mt-10 md:mt-12">
+        {/* --- UPDATED CTAs (Two Buttons) --- */}
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mt-10 md:mt-12">
           <div className="relative group w-full sm:w-auto">
             <button
-              onClick={handleStartCreating}
+              onClick={handleAISudio}
               className="w-full sm:w-auto bg-[#ec4899] text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer"
             >
-              <Zap size={20} /> START CREATING NOW
+              <Zap size={20} /> START AI STUDIO
             </button>
             <span className="absolute -top-3 right-4 sm:-right-2 bg-white text-black text-[8px] md:text-[10px] px-2 py-0.5 rounded font-bold">
               ACTIVE
             </span>
           </div>
+
+          <button
+            onClick={handleVoiceOver}
+            className="w-full sm:w-auto border border-white/30 hover:border-white/60 bg-white/5 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer"
+          >
+            <Zap size={20} /> VOICE OVER CREATION
+          </button>
         </div>
       </div>
 
@@ -188,7 +146,6 @@ const Hero = () => {
           transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
           className="flex gap-6"
         >
-          {/* Doubled the unique set for a seamless loop */}
           {[...generatedScenes, ...generatedScenes].map((scene, idx) => (
             <motion.div
               key={`${scene.id}-${idx}`}

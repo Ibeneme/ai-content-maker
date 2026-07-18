@@ -12,12 +12,19 @@ import {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Helper for smooth scrolling from the footer
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleAISudio = () => {
+    window.open("https://aivideostudio.vercel.app/", "_blank");
+  };
+
+  const handleVoiceOver = () => {
+    window.open("https://aivideostudio.vercel.app/", "_blank");
   };
 
   return (
@@ -34,12 +41,12 @@ const Footer = () => {
           <motion.div
             animate={{ x: ["-100%", "100%"] }}
             transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
+            className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
           />
 
           <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">
-            Ready to <br />
-            <span className="text-[#ec4899]">Get Started?</span>
+            READY TO <br />
+            <span className="text-[#ec4899]">GET STARTED?</span>
           </h2>
 
           <p className="max-w-xl text-zinc-400 text-base md:text-xl font-medium">
@@ -47,19 +54,28 @@ const Footer = () => {
             consistent, hyper-realistic content engines.
           </p>
 
-          <div className="relative group">
+          {/* Improved Buttons - Better Width & Matching Screenshot */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center">
             <button
-              onClick={() => scrollToSection("hero")}
-              className="bg-white text-black px-8 md:px-12 py-5 md:py-6 rounded-2xl font-black text-lg md:text-xl flex items-center gap-4 transition-all hover:scale-105 shadow-[0_0_50px_rgba(255,255,255,0.2)] group-hover:shadow-[#ec4899]/40 group-hover:bg-[#ec4899] group-hover:text-white"
+              onClick={handleAISudio}
+              className="flex-1 bg-white text-black px-10 py-6 rounded-2xl font-black text-[12px] flex items-center justify-center gap-3 hover:bg-[#ec4899] hover:text-white transition-all shadow-xl min-w-[220px]"
             >
-              GET STARTED <ArrowUpRight size={24} />
+              START AI STUDIO
+              <ArrowUpRight size={24} />
             </button>
-        
+
+            <button
+              onClick={handleVoiceOver}
+              className="flex-1 bg-zinc-900  text-white px-10 py-6 rounded-2xl font-black text-[12px] flex items-center justify-center gap-3 transition-all min-w-[220px]"
+            >
+              VOICE OVER CREATION
+              <ArrowUpRight size={24} />
+            </button>
           </div>
         </motion.div>
       </div>
 
-      {/* --- SECTION 2: FOOTER LINKS --- */}
+      {/* Rest of the footer remains the same */}
       <div className="max-w-7xl mx-auto border-t border-white/5 pt-20">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
           {/* Brand Column */}
@@ -89,7 +105,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links Columns - Targeted to IDs */}
           <div className="space-y-6">
             <h4 className="text-white text-xs font-black uppercase tracking-widest">
               Protocol
@@ -154,7 +169,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter / Contact */}
           <div className="col-span-2 space-y-6">
             <h4 className="text-white text-xs font-black uppercase tracking-widest flex items-center gap-2">
               <Cpu size={14} className="text-[#ec4899]" /> Join the System
@@ -172,7 +186,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* BOTTOM COPYRIGHT */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 pt-12 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600">
           <p>© {currentYear} AI-MAKER NEURAL ENGINE. ALL RIGHTS SECURED.</p>
           <div className="flex gap-8">
