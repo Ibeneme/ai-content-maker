@@ -25,7 +25,7 @@ const Navbar = () => {
 
   // Updated external links
   const handleAISudioLogin = () => {
-    window.open("https://aivideostudio.vercel.app/", "_blank");
+    window.open("https://your-ai-content-studio.vercel.app/auth", "_blank");
     setIsOpen(false);
   };
 
