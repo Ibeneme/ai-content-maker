@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   const handleVoiceOver = () => {
-    window.open("https://aivideostudio.vercel.app/", "_blank");
+    window.open("https://your-ai-content-studio.vercel.app/auth", "_blank");
   };
 
   const generatedScenes = [
