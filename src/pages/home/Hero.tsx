@@ -11,11 +11,11 @@ import hh from "../../assets/images/new_oo.jpg";
 const Hero = () => {
   // New handlers for the two platforms
   const handleAISudio = () => {
-    window.open("https://aivideostudio.vercel.app/", "_blank");
+     window.open("https://your-ai-content-studio.vercel.app/auth", "_blank");
   };
 
   const handleVoiceOver = () => {
-    window.open("https://your-ai-content-studio.vercel.app/auth", "_blank");
+    window.open("https://aivideostudio.vercel.app/", "_blank");
   };
 
   const generatedScenes = [
@@ -134,7 +134,7 @@ const Hero = () => {
             onClick={handleVoiceOver}
             className="w-full sm:w-auto border border-white/30 hover:border-white/60 bg-white/5 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer"
           >
-            <Zap size={20} /> VOICE OVER CREATION
+            <Zap size={20} />PHOTO ANIMATION
           </button>
         </div>
       </div>
