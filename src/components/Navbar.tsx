@@ -101,7 +101,7 @@ const Navbar = () => {
                 className="relative group px-4 md:px-6 py-2 rounded-xl bg-white/5 border border-white/10 items-center gap-2 hover:border-[#ec4899]/50 transition-all cursor-pointer"
               >
                 <span className="text-[10px] md:text-xs font-black uppercase text-white tracking-widest">
-                  Voice Over
+                 Photo Animation
                 </span>
               </button>
             </div>
@@ -169,7 +169,7 @@ const Navbar = () => {
                     onClick={handleVoiceOverLogin}
                     className="w-full py-4 bg-white text-black rounded-2xl font-black uppercase tracking-widest"
                   >
-                    Login to Voice Over
+                    Login to Photo Animation
                   </button>
                 </>
               ) : (
